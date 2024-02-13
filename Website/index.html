@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+    .title {
+      color: white;
+      background-color: #080e26;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 85px 120px 85px 120px;
+      overflow: hidden;
+    }
+    .title-head {
+      width: 5em;
+      font-size: 3em;
+      font-family: "Fraunces", serif;
+      margin: 1em;
+    }
+    .title-image {
+      transform: rotate(-90deg);
+      mix-blend-mode: lighten;
+    }
+    .title-text {
+      font-size: 1em;
+      font-family: "Epilogue", sans-serif;
+      margin: 3em;
+      line-height: 2em;
+    }
+    .title-button {
+      background-color: #8c98ca;
+      font-family: "Fraunces", serif;
+      font-weight: 500;
+      border: none;
+      padding: 1em;
+      font-size: 1em;
+      border-radius: 5%;
+      margin-left: 3em;
+      transition: all 0.5s;
+    }
+    .title-button:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+
+    .works {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    .works-container {
+      background-color: #080e26;
+      margin: 85px 120px 85px 120px;
+      padding: 3em;
+      border-radius: 3em;
+    }
+    .works-head {
+      font-size: 3em;
+      font-family: "Fraunces", serif;
+      margin: 25px 0px 25px 1.5em;
+    }
+    .works-info {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-around;
+    }
+    .works-box {
+      margin-right: 10px;
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-bottom: auto;
+    }
+    .works-point {
+      font-size: 1.5em;
+      font-family: "Fraunces", serif;
+      margin: 10px 0px 10px 0px;
+    }
+    .works-subpoint {
+      font-size: 1em;
+      font-family: "Epilogue", sans-serif;
+      line-height: 2em;
+    }
+
+    .features {
+      background-color: #080e26;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      border-bottom: 1px solid #414a70;
+    }
+    .features-container {
+      background-color: #080e26;
+      margin: 85px 120px 85px 120px;
+      padding: 3em;
+      border-radius: 3em;
+    }
+    .features-head {
+      font-size: 3em;
+      font-family: "Fraunces", serif;
+      margin: 25px 0px 50px 0px;
+    }
+    .features-info {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      padding-bottom: auto;
+    }
+    .features-box {
+      width: 20%;
+      margin: 20px 100px 20px 100px;
+      position: relative;
+    }
+    .features-point {
+      font-size: 1.5em;
+      font-family: "Fraunces", serif;
+      margin: 10px 0px 10px 0px;
+    }
+    .features-subpoint {
+      font-size: 1em;
+      font-family: "Epilogue", sans-serif;
+      line-height: 2em;
+    }
+    .features-number {
+      position: absolute;
+      font-family: "Fraunces", serif;
+      font-size: 2em;
+      background-color: #283157;
+      width: 1.5em;
+      height: 1.5em;
+      top: -1em;
+      left: -1.5em;
+      text-align: center;
+      transform: scale(0.7);
+      border: 1px solid #414a70;
+      border-radius: 10%;
+    }
+
+    .task {
+      background-color: #080e26;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    .task-container {
+      background-color: #080e26;
+      margin: 85px 120px 85px 120px;
+      padding: 3em;
+      border-radius: 3em;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    .task-input {
+      font-family: "Epilogue", sans-serif;
+      line-height: 2em;
+      font-size: 2em;
+      padding: 1em;
+      width: 70vw;
+      height: 10vh;
+      margin-bottom: 1em;
+      background-color: #535972;
+      color: white;
+      border: none;
+      border-radius: 3%;
+      border-bottom: 1px solid #414a70;
+      /* outline: 2px solid white; */
+      outline-offset: -10px;
+      transition: all 0.5s ;
+    }
+    .task-input:focus {
+      border: none;
+      outline: 2px solid white;
+      outline-offset: 10px;
+    }
+
+    .task-button {
+      background-color: #8c98ca;
+      font-family: "Fraunces", serif;
+      font-weight: 500;
+      border: none;
+      padding: 1em;
+      font-size: 1em;
+      border-radius: 4%;
+      width: 15em;
+      transition: all 0.5s;
+    }
+    .task-button:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  </style>
+  <body>
+    <section class="title">
+      <div class="title-info">
+        <div class="title-head">About CommentGuard</div>
+        <div class="title-text">
+          CommentGuard is a user-friendly web application designed to detect
+          offensive language and protect online communities. From social media
+          platforms to websites, CommentGuard ensures a safer digital
+          environment for all users.
+        </div>
+        <button class="title-button">Learn More</button>
+      </div>
+      <div class="title-image">
+        <img src="images/tech.jpg" alt="" />
+      </div>
+    </section>
+    <section class="works">
+      <div class="works-container">
+        <div class="works-head">How it works</div>
+        <div class="works-info">
+          <div class="works-box">
+            <div class="works-point">Content Monitoring</div>
+            <div class="works-subpoint">
+              CommentGuard scans text content in real-time for potentially
+              harmful language.
+            </div>
+          </div>
+          <div class="works-box">
+            <div class="works-point">Automatic Filtering</div>
+            <div class="works-subpoint">
+              Offensive comments are automatically filtered out before they can
+              reach the audience.
+            </div>
+          </div>
+          <div class="works-box">
+            <div class="works-point">Custom Settings</div>
+            <div class="works-subpoint">
+              Users can customize the severity level of filters based on their
+              platform's requirements.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="features">
+      <div class="features-container">
+        <div class="features-head">Features of CommentGuard</div>
+        <div class="features-info">
+          <div class="features-box">
+            <div class="features-number">1</div>
+            <div class="features-point">Real-Time Detection</div>
+            <div class="features-subpoint">
+              Identifies and removes harmful content as it is posted.
+            </div>
+          </div>
+          <div class="features-box">
+            <div class="features-number">2</div>
+            <div class="features-point">Multilingual Support</div>
+            <div class="features-subpoint">
+              Capable of analyzing content in multiple languages to ensure broad
+              coverage.
+            </div>
+          </div>
+          <div class="features-box">
+            <div class="features-number">3</div>
+            <div class="features-point">Customizable Filters</div>
+            <div class="features-subpoint">
+              Provides flexibility to adjust filters according to specific
+              community standards.
+            </div>
+          </div>
+          <div class="features-box">
+            <div class="features-number">4</div>
+            <div class="features-point">Scalable Solution</div>
+            <div class="features-subpoint">
+              Adaptable for use on various digital platforms, from small forums
+              to large social networks.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="task">
+      <div class="task-container">
+        <input class="task-input" type="text" name="" id="" />
+        <button class="task-button">Check Offensive Character</button>
+      </div>
+    </section>
+  </body>
+</html>
