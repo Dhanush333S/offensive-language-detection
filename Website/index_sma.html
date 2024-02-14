@@ -353,5 +353,11 @@
         <button class="task-button">Check Offensive Character</button>
       </div>
     </section>
+    <script>
+      const learnMoreButton = document.querySelector('.title-button');
+      learnMoreButton.addEventListener('click', () => {
+        document.querySelector('.task').scrollIntoView({ behavior: 'smooth' });
+      });
+    </script>
   </body>
 </html>
