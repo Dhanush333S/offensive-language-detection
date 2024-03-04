@@ -219,6 +219,7 @@
       padding: 20px;
       margin-top: 0px;
       font-family: "Poppins";
+      padding-top: 70px;
     }
     .task-input {
       font-family: "Poppins", sans-serif;
@@ -243,6 +244,52 @@
       outline-offset: 10px;
     }
 
+    .audio-input {
+      font-family: "Poppins", sans-serif;
+      line-height: 2em;
+      font-size: 2em;
+      padding: 1em;
+      width: 70vw;
+      height: 10vh;
+      margin-bottom: 1em;
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 20px;
+      border-bottom: 1px solid #414a70;
+      /* outline: 2px solid white; */
+      outline-offset: -10px;
+      transition: all 0.5s ;
+    }
+    .audio-input:focus {
+      border: none;
+      outline: 2px solid white;
+      outline-offset: 10px;
+    }
+
+    .image-input {
+      font-family: "Poppins", sans-serif;
+      line-height: 2em;
+      font-size: 2em;
+      padding: 1em;
+      width: 70vw;
+      height: 10vh;
+      margin-bottom: 1em;
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 20px;
+      border-bottom: 1px solid #414a70;
+      /* outline: 2px solid white; */
+      outline-offset: -10px;
+      transition: all 0.5s ;
+    }
+    .image-input:focus {
+      border: none;
+      outline: 2px solid white;
+      outline-offset: 10px;
+    }
+
     .task-button {
       background: radial-gradient(at top left, rgb(238, 71, 238), rgb(12, 12, 238));
       color: white;
@@ -254,10 +301,74 @@
       border-radius: 20px;
       width: 15em;
       transition: all 0.5s;
+      justify-content: center;
     }
     .task-button:hover {
       cursor: pointer;
       transform: scale(1.1);
+    }
+
+    .audio-button {
+      background: radial-gradient(at top left, rgb(238, 71, 238), rgb(12, 12, 238));
+      color: white;
+      font-family: "Poppins", serif;
+      font-weight: 500;
+      border: none;
+      padding: 1em;
+      font-size: 1em;
+      border-radius: 20px;
+      width: 15em;
+      transition: all 0.5s;
+    }
+    .audio-button:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+
+    .image-button {
+      background: radial-gradient(at top left, rgb(238, 71, 238), rgb(12, 12, 238));
+      color: white;
+      font-family: "Poppins", serif;
+      font-weight: 500;
+      border: none;
+      padding: 1em;
+      font-size: 1em;
+      border-radius: 20px;
+      width: 15em;
+      transition: all 0.5s;
+    }
+    .image-button:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+
+    #dataSource{
+      color: black;
+      font-family: 'Poppins';
+      padding-top: 5px;
+      width: 200px;
+    }
+
+    h2{
+      color: white;
+      font-family: 'Poppins';
+      padding: 5px;
+    }
+
+    .task-heading{
+      text-align: center;
+    }
+
+    .task-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center; /* Center align text */
+    }
+
+    .task-button {
+      margin-top: 10px; /* Adjust margin as needed */
     }
   </style>
 
@@ -347,17 +458,115 @@
       </div>
     </section>
     <section class="task">
-      <div class="task-container">
+      
+      
+      <!-- <div class="task-container">
+
+        <label for="dataSource"><h2>Choose the type of data-source:</h2></label>
+        <select name="dataSource" id="dataSource">
+        <option value="text">Text</option>
+        <option value="audio">Audio</option>
+        <option value="image">Image</option>
+      </select>
+
         <h1 class="task-heading">Let's examine the offensive text</h1>
         <input class="task-input" type="text" name="" id="" />
         <button class="task-button">Check Offensive Character</button>
+        
+        <h1 class="task-heading">Let's examine the offensive text from Audio</h1>
+<form id="audioForm" enctype="multipart/form-data">
+    <input class="audio-input" type="file" accept="audio/*" id="audioInput" name="audioInput" placeholder="Input the audio file (.mp3, .wav, etc.)" required/>
+    
+</form>
+<button class="audio-button" type="submit">Check Offensive Text from Audio</button>
+
+
+        <h1 class="task-heading">Let's examine the offensive text from Image</h1>
+<form id="imageForm" enctype="multipart/form-data">
+    <input class="image-input" type="file" accept="image/*" id="imageInput" name="imageInput" placeholder="Input the image file (.jpg, .png, etc.)" required/>
+</form>
+<button class="image-button" type="submit">Check Offensive Text from Image</button>
+
+    
+      </div> -->
+
+      <div class="task-container">
+        <label for="dataSource"><h2>Choose the type of data-source:</h2></label>
+        <select name="dataSource" id="dataSource">
+          <option value="text">Text</option>
+          <option value="audio">Audio</option>
+          <option value="image">Image</option>
+        </select>
+  
+        <div id="taskContent">
+          <h1 class="task-heading">Let's examine the offensive text</h1>
+          <input class="task-input" type="text" name="" id="textInput" style="display: block;" />
+          <button class="task-button" id="taskButton">Check Offensive Character</button>
+        </div>
       </div>
     </section>
     <script>
-      const learnMoreButton = document.querySelector('.title-button');
+      /* const learnMoreButton = document.querySelector('.title-button');
       learnMoreButton.addEventListener('click', () => {
         document.querySelector('.task').scrollIntoView({ behavior: 'smooth' });
       });
+
+      document.addEventListener('DOMContentLoaded', function() {
+    var dataSourceSelect = document.getElementById('dataSource');
+    var textInput = document.getElementById('textInput');
+    var audioInput = document.getElementById('audioInput');
+    var imageInput = document.getElementById('imageInput');
+
+    dataSourceSelect.addEventListener('change', function() {
+      var selectedOption = dataSourceSelect.options[dataSourceSelect.selectedIndex].value;
+      if (selectedOption === 'text') {
+        textInput.focus();
+      } else if (selectedOption === 'audio') {
+        audioInput.focus();
+      } else if (selectedOption === 'image') {
+        imageInput.focus();
+      }
+    });
+  }); */
+
+  document.addEventListener('DOMContentLoaded', function() {
+      var dataSourceSelect = document.getElementById('dataSource');
+      var taskContent = document.getElementById('taskContent');
+      
+      dataSourceSelect.addEventListener('change', function() {
+        var selectedOption = dataSourceSelect.value;
+        var newContent = '';
+
+        if (selectedOption === 'audio') {
+          newContent = `
+            <h1 class="task-heading">Let's examine the offensive text from Audio</h1>
+            <form id="audioForm" enctype="multipart/form-data">
+              <input class="audio-input" type="file" accept="audio/*" id="audioInput" name="audioInput" placeholder="Input the audio file (.mp3, .wav, etc.)" required/>
+            </form>
+            <button class="audio-button" type="submit">Check Offensive Text from Audio</button>
+          `;
+        } else if (selectedOption === 'image') {
+          newContent = `
+          <h1 class="task-heading">Let's examine the offensive text from Image</h1>
+<form id="imageForm" enctype="multipart/form-data">
+    <input class="image-input" type="file" accept="image/*" id="imageInput" name="imageInput" placeholder="Input the image file (.jpg, .png, etc.)" required/>
+</form>
+<button class="image-button" type="submit">Check Offensive Text from Image</button>
+          `;
+          // You can add similar content for the image option if needed
+        } else {
+          newContent = `
+            <h1 class="task-heading">Let's examine the offensive text</h1>
+            <input class="task-input" type="text" name="" id="textInput" style="display: block;" />
+            <button class="task-button" id="taskButton">Check Offensive Character</button>
+          `;
+        }
+
+        taskContent.innerHTML = newContent;
+      });
+    });
+
+  
     </script>
   </body>
 </html>
