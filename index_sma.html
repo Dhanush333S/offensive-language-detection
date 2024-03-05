@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .title {
+      color: white;
+      background-color: #080e26;
+      /*  background: url('https://us.123rf.com/450wm/mokkova/mokkova2303/mokkova230300223/200642815-navy-wavy-background-geometric-banner-with-gradient-waves.jpg?ver=6'); */
+      background: url("https://media.licdn.com/dms/image/D4D12AQGNTpCZZhxFXg/article-cover_image-shrink_720_1280/0/1689772127114?e=1713398400&v=beta&t=q8WT3yxbOmwtY_78TpAEKCkrmkiPnpxNAEfp9gB-CrA");
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      padding: 60px 120px 85px 0px;
+      overflow: hidden;
+    }
+    .title-head {
+      width: 5em;
+      font-size: 3em;
+      font-family: "Fraunces", serif;
+      font-family: "Poppins";
+      font-weight: bold;
+      margin: 1em;
+    }
+    .title-image {
+      /* transform: rotate(-90deg); */
+      mix-blend-mode: lighten;
+    }
+    .title-text {
+      font-size: 1em;
+      font-family: "Poppins";
+      margin: 3em;
+      line-height: 2em;
+      text-align: justify;
+      max-width: 500px; /* Adjust the maximum width as needed */
+      overflow: hidden;
+      word-wrap: break-word;
+    }
+    .title-button {
+      background-color: rgb(194, 10, 235);
+      background: radial-gradient(
+        at top left,
+        rgb(238, 71, 238),
+        rgb(12, 12, 238)
+      );
+      font-family: "Fraunces", serif;
+      font-weight: bold;
+      border: none;
+      padding: 15px;
+      font-size: 1em;
+      border-radius: 10px;
+      margin-left: 3em;
+      transition: all 0.5s;
+      color: white;
+      font-family: "Poppins";
+    }
+    .title-button:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+
+    .works {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    .works-container {
+      background-color: #080e26;
+      background: url("https://img.freepik.com/free-vector/ai673aa1c20c08423489e975b1b26f929b_78370-2058.jpg");
+      background-size: cover;
+      margin: 85px 120px 85px 120px;
+      padding: 3em;
+      border-radius: 3em;
+    }
+    .works-head {
+      font-size: 3em;
+      font-family: "Poppins";
+      font-weight: bold;
+      text-align: center;
+      /* margin: 25px 0px 25px 1.5em; */
+    }
+    .works-info {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-around;
+    }
+    .works-box {
+      margin-right: 10px;
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-bottom: auto;
+    }
+    .works-point {
+      font-size: 1.5em;
+      font-family: "Poppins";
+      text-align: center;
+      font-weight: 700;
+      margin: 10px 0px 10px 0px;
+    }
+    .works-subpoint {
+      font-size: 1em;
+      font-family: "Poppins";
+      line-height: 2em;
+      text-align: center;
+    }
+
+    .features {
+      background-color: #080e26;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      border-bottom: 1px solid #414a70;
+    }
+    .features-container {
+      background-color: #080e26;
+      margin: 85px 120px 85px 120px;
+      padding: 3em;
+      border-radius: 3em;
+    }
+    .features-head {
+      font-size: 3em;
+      font-family: "Poppins", serif;
+      margin: 25px 0px 50px 0px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .features-info {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      padding-bottom: auto;
+    }
+    .features-box {
+      width: 20%;
+      margin: 20px 100px 20px 100px;
+      position: relative;
+    }
+    .features-point {
+      font-size: 1.5em;
+      font-family: "Poppins", serif;
+      font-weight: 600;
+      text-align: center;
+      margin: 10px 0px 10px 0px;
+      margin-top: 10px;
+      padding-top: 10px;
+    }
+    .features-subpoint {
+      font-size: 1em;
+      font-family: "Poppins", sans-serif;
+      line-height: 2em;
+      text-align: center;
+    }
+    .features-number {
+      position: absolute;
+      font-family: "Poppins", serif;
+      font-size: 2em;
+      background: radial-gradient(
+        at top left,
+        rgb(238, 71, 238),
+        rgb(12, 12, 238)
+      );
+      width: 1.5em;
+      height: 1.5em;
+      top: -1em;
+      left: -1.5em;
+      margin-left: 7rem;
+      text-align: center;
+      transform: scale(0.7);
+      border: 1px solid #414a70;
+      border-radius: 10%;
+    }
+
+    .task {
+      background-color: #080e26;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    .task-container {
+      background-color: #080e26;
+
+      margin: 85px 120px 85px 120px;
+      padding: 3em;
+      border-radius: 3em;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .task-heading {
+      color: white;
+      padding: 20px;
+      margin-top: 0px;
+      font-family: "Poppins";
+    }
+    .task-input {
+      font-family: "Poppins", sans-serif;
+      line-height: 2em;
+      font-size: 2em;
+      padding: 1em;
+      width: 70vw;
+      height: 10vh;
+      margin-bottom: 1em;
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 20px;
+      border-bottom: 1px solid #414a70;
+      /* outline: 2px solid white; */
+      outline-offset: -10px;
+      transition: all 0.5s;
+    }
+    .task-input:focus {
+      border: none;
+      outline: 2px solid white;
+      outline-offset: 10px;
+    }
+
+    .task-button {
+      background: radial-gradient(
+        at top left,
+        rgb(238, 71, 238),
+        rgb(12, 12, 238)
+      );
+      color: white;
+      font-family: "Poppins", serif;
+      font-weight: 500;
+      border: none;
+      padding: 1em;
+      font-size: 1em;
+      border-radius: 20px;
+      width: 15em;
+      transition: all 0.5s;
+    }
+    .task-button:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+
+    .text-input{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #080e26;
+    }
+
+    #resultContainer{
+      background-color: aliceblue;
+      color: #080e26;
+      font-size: 30px;
+      text-transform: capitalize;
+      text-align: center;
+      padding: 20px;
+      position: absolute;
+      left: 0;
+    }
+  </style>
+
+  <body>
+    <section class="title">
+      <div class="title-info">
+        <div class="title-head">About CommentGuard</div>
+        <div class="title-text">
+          CommentGuard is a user-friendly web application designed to detect
+          offensive language and protect online communities. From social media
+          platforms to websites, CommentGuard ensures a safer digital
+          environment for all users.
+        </div>
+        <button class="title-button">Learn More</button>
+      </div>
+      <div class="title-image">
+        <!-- <img src="images/privacy.png" alt="" /> -->
+        <!-- <img src="https://www.katsoftware.net/wp-content/uploads/2019/11/tpv.jpg" alt="" /> -->
+      </div>
+    </section>
+    <section class="works">
+      <div class="works-container">
+        <div class="works-head">How it works</div>
+        <div class="works-info">
+          <div class="works-box">
+            <div class="works-point">Content Monitoring</div>
+            <div class="works-subpoint">
+              CommentGuard scans text content in real-time for potentially
+              harmful language.
+            </div>
+          </div>
+          <div class="works-box">
+            <div class="works-point">Automatic Filtering</div>
+            <div class="works-subpoint">
+              Offensive comments are automatically filtered out before they can
+              reach the audience.
+            </div>
+          </div>
+          <div class="works-box">
+            <div class="works-point">Custom Settings</div>
+            <div class="works-subpoint">
+              Users can customize the severity level of filters based on their
+              platform's requirements.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="features">
+      <div class="features-container">
+        <div class="features-head">Features</div>
+        <div class="features-info">
+          <div class="features-box">
+            <div class="features-number">1</div>
+            <div class="features-point">Real-Time Detection</div>
+            <div class="features-subpoint">
+              Identifies and removes harmful content as it is posted.
+            </div>
+          </div>
+          <div class="features-box">
+            <div class="features-number">2</div>
+            <div class="features-point">Multilingual Support</div>
+            <div class="features-subpoint">
+              Capable of analyzing content in multiple languages to ensure broad
+              coverage.
+            </div>
+          </div>
+          <div class="features-box">
+            <div class="features-number">3</div>
+            <div class="features-point">Customizable Filters</div>
+            <div class="features-subpoint">
+              Provides flexibility to adjust filters according to specific
+              community standards.
+            </div>
+          </div>
+          <div class="features-box">
+            <div class="features-number">4</div>
+            <div class="features-point">Scalable Solution</div>
+            <div class="features-subpoint">
+              Adaptable for use on various digital platforms, from small forums
+              to large social networks.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="task">
+      <div class="task-container">
+          <h1 class="task-heading">Let's examine the offensive text</h1>
+          
+          <form id="offensiveForm" class="text-input">
+              <input class="task-input" type="text" name="comment" id="comment" placeholder="Enter text" required />
+              <button class="task-button" type="submit">Check Offensive Character</button>
+          </form>
+          <div id="resultContainer">
+          </div>
+      </div>
+  
+      <script>
+          document.getElementById('offensiveForm').addEventListener('submit', function(e) {
+              e.preventDefault();
+              checkOffensive();
+          });
+  
+          function checkOffensive() {
+              const comment = document.getElementById('comment').value;
+  
+              fetch('/', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/x-www-form-urlencoded',
+                  },
+                  body: `comment=${encodeURIComponent(comment)}`,
+              })
+              .then(response => response.json())
+              .then(data => {
+                  document.getElementById('resultContainer').innerHTML = `<p>${comment}</p><p>${data.result}</p>`;
+              })
+              .catch(error => console.error('Error:', error));
+          }
+      </script>
+  </section>
+  </section>
+  </body>
+</html>
